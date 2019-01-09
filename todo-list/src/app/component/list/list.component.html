@@ -1,0 +1,10 @@
+<h1>Tasks List</h1>
+<div *ngIf='tasks'>
+  <p *ngFor='let task of tasks'><b>{{task.title}}</b><br>
+    <span><a routerLink="task/{{task._id}}">edit</a> | <a href="javascropt:void(0)" (click)="removeTask(task._id)">delete</a></span>
+  </p>
+  <br><br>
+</div>
+<div *ngIf="tasks?.length === 0">
+  <p>Tasks Not Found!</p>
+</div>
